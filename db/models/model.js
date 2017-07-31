@@ -6,7 +6,7 @@ const Food = db.define('foods', {
     type: Sequelize.STRING
   },
   expiration: {
-    type: Sequelize.DATE
+    type: Sequelize.DATEONLY
   }
 }, {
   timestamps: false

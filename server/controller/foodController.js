@@ -3,7 +3,7 @@ const Food = require('../../db/models/model');
 
 module.exports = {
   addFood: (req, res) => {
-    Food.post({
+    Food.create({
       item: req.body.item,
       expiration: req.body.expiration
     })
@@ -33,7 +33,7 @@ module.exports = {
     })
   },
   findFood: (req, res) => {
-    Food.findAll({ where: {item: req.params.item}})
+    Food.findAll({ where: {id: req.params.id}})
     .then(data => {
       res.status(200).send(data)
     })
