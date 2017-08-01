@@ -99,14 +99,14 @@ class App extends Component {
             <h1 className="title">Fridge Me</h1>
             <span className="addfood">
               Food: <input className="foodinput" type="text" name="food" placeholder="Enter food item" value={this.state.food} onChange={this.handleOnChange} />
-              Expiration Date: <input classname="dateinput" type="text" name="date" placeholder="Enter expiration date" value={this.state.date} onChange={this.handleOnChange} />
+              Expiration Date: <input className="dateinput" type="text" name="date" placeholder="Enter expir. date" value={this.state.date} onChange={this.handleOnChange} />
             </span>
             <button className="addbutton" onClick={this.handleOnAdd}>Add Food</button>
-            <button onClick={this.handleGetAll}>Filter By Expiration Date</button>
+            {/* <button onClick={this.handleGetAll}>Filter By Expiration Date</button> */}
             {/* <button onClick={this.handleOnBrowse}>Find in Fridge</button> */}
             {/* {this.state.browse ? <Browse /> : null} */}
             {/* {this.state.foodlist ?  <FoodList produces={this.state.produces} handleOnDelete={this.handleOnDelete}/> : null} */}
-            <FoodList produces={this.state.produces} handleOnDelete={this.handleOnDelete} handleOnClick={this.handleOnClick}/>
+            <FoodList handleGetAll={this.handleGetAll} produces={this.state.produces} handleOnDelete={this.handleOnDelete} handleOnClick={this.handleOnClick}/>
          </div>
         <div className="right"> 
           <Recipes recipes={this.state.recipes}/>

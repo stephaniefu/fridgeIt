@@ -1,11 +1,11 @@
 import React from 'react';
 
 const RecipeEntry = ({ recipe }) => {
-  // console.log('this is recipe in entry', recipe.label)
   return (
     <div className="recipeentry">
-     <a href={recipe.url} target="_blank"><img src={recipe.image} /></a><br/>
-      <a classname="recipename" href={recipe.url} target="_blank">{recipe.label}</a>
+     <a href={recipe.url} target="_blank"><img className="recipeimage" src={recipe.image}/></a><br/>
+      <a className="recipename" href={recipe.url} target="_blank">{recipe.label}</a>
+      <h3 className="calories"> {Math.round(recipe.calories)} calories</h3>
     </div>
   );
 };
