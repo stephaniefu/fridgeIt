@@ -73,4 +73,22 @@ input[type=text] {
 .addfood {
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
+  margin-left: 1.5cm;
+
+}
+
+.addbutton{
+  font-size: 18px; 
+  border-radius: 8px;
+  border-color: grey;
+  padding: 2px 12px;
+  font-family: 'Amatic SC', cursive;
+  background-color:whitesmoke;
+  margin-left: 1cm;
+}
+
+.addbutton:hover {
+  cursor: pointer;
+  background-color:grey;
+
 }

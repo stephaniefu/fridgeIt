@@ -101,7 +101,7 @@ class App extends Component {
               Food: <input className="foodinput" type="text" name="food" placeholder="Enter food item" value={this.state.food} onChange={this.handleOnChange} />
               Expiration Date: <input classname="dateinput" type="text" name="date" placeholder="Enter expiration date" value={this.state.date} onChange={this.handleOnChange} />
             </span>
-            <button onClick={this.handleOnAdd}>Add</button>
+            <button className="addbutton" onClick={this.handleOnAdd}>Add Food</button>
             <button onClick={this.handleGetAll}>Filter By Expiration Date</button>
             {/* <button onClick={this.handleOnBrowse}>Find in Fridge</button> */}
             {/* {this.state.browse ? <Browse /> : null} */}
