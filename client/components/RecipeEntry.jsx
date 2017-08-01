@@ -5,7 +5,7 @@ const RecipeEntry = ({ recipe }) => {
   return (
     <div className="recipeentry">
      <a href={recipe.url} target="_blank"><img src={recipe.image} /></a><br/>
-      <a href={recipe.url} target="_blank">{recipe.label}</a>
+      <a classname="recipename" href={recipe.url} target="_blank">{recipe.label}</a>
     </div>
   );
 };
