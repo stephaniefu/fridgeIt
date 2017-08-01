@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const db = require('../db/index');
 const routes= require('./routes/router');
 const model = require('../db/models/model');
+const path = require('path');
 
 const PORT = 3030;
 
@@ -13,7 +14,7 @@ app.use(parser.json());
 app.use(parser.urlencoded({extended:true}));
 app.use(morgan('dev'));
 app.use('/api', routes);
-// app.use(express.static('client'));
+app.use(express.static(path.resolve(__dirname, '../client')));
 
 
 app.listen(PORT, err => {

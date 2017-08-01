@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  align-items: stretch;
+  justify-content: stretch;
+  height: 100%;
+  width: 100%;
+}
+
+
+.left {
+  background: url('https://www.pixelstalk.net/wp-content/uploads/wallpapers/white-marble-hd-wallpaper.jpg');
+  background-repeat: repeat;
+  flex: 1;
+  padding: 1rem;
+}
+
+.right {
+  background: url('http://rhyva.info/wp-content/uploads/2016/09/unique-white-marble-background-5.jpg');;
+  flex: 1;
+  padding: 1rem;
+}
+
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center
+}
+
+.table {
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  font-family: 'Boogaloo', cursive;
+  font-size: 24px;
+}
+
+.recipeentry{
+  text-align: center;
+  padding: 15px;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  color: gray;
+}
+
+.recipename {
+  color: gray;
+}
+
+.title{
+  font-family: 'Satisfy', cursive;
+  font-size: 50px;
+}
+
+.tableitems {
+  font-family: 'Amatic SC', cursive;
+  font-size: 28px;
+  font-style: bold;
+}
+
+.item {
+  cursor: pointer
+}
+
+input[type=text] {
+  background-color: transparent; 
+  border-style: solid; 
+  border-width: 0px 0px 1px 0px; 
+  border-color: black;
+}
+
+.addfood {
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+}

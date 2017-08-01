@@ -9,7 +9,7 @@ router.get('/foods', controller.getAllFoods);
 //get all foods expiring by date *
 router.get('/foods/:expiration', controller.findExpiration);
 //get all food by search
-router.get('/foods/item/:id', controller.findFood);
+router.get('/foods/item/:item', controller.findFood);
 //delete food *
 router.delete('/foods/:id', controller.deleteFood);
 

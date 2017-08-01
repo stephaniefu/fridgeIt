@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const Food = require('../../db/models/model');
+const axios = require('axios');
 
 module.exports = {
   addFood: (req, res) => {
@@ -15,7 +16,7 @@ module.exports = {
     })
   },
   getAllFoods: (req, res) => {
-    Food.findAll({})
+    Food.findAll({ order: [['expiration', 'ASC']]})
     .then(data => {
       res.status(200).send(data)
     })
@@ -33,7 +34,7 @@ module.exports = {
     })
   },
   findFood: (req, res) => {
-    Food.findAll({ where: {id: req.params.id}})
+    Food.findAll({ where: {item: req.params.item}})
     .then(data => {
       res.status(200).send(data)
     })
@@ -43,7 +44,7 @@ module.exports = {
   },
   deleteFood: (req, res) => {
     Food.destroy({ where: {id: req.params.id}})
-    .then(data => {
+    .then((count, data) => {
       res.status(200).send(data)
     })
     .catch(err => {
