@@ -51,7 +51,7 @@ h1 {
 }
 
 .recipeimage {
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .recipeimage:hover {
@@ -104,21 +104,39 @@ input[type=text] {
 
 .addbutton,
 .filterbutton,
-.removebutton {
+.removebutton,
+.savebutton,
+.showsavedbutton {
   font-size: 18px; 
   border-radius: 8px;
   border-color: grey;
   padding: 1px 12px;
   font-family: 'Amatic SC', cursive;
   background-color:whitesmoke;
+  letter-spacing: 1px;
 }
+
+.addbutton:focus,
+.filterbutton:focus,
+.removebutton:focus,
+.savebutton:focus,
+.showsavedbutton:focus {
+  outline: 0;
+}
+
 .addbutton{
   margin-left: 1cm;  
 }
 
 .addbutton:hover,
 .filterbutton:hover,
-.removebutton:hover {
+.removebutton:hover,
+.savebutton:hover,
+.showsavedbutton:hover {
   cursor: pointer;
   background-color:grey;
+}
+
+.recipepage {
+  text-align: center
 }

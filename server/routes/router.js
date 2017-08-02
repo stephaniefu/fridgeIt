@@ -12,6 +12,11 @@ router.get('/foods/:expiration', controller.findExpiration);
 router.get('/foods/item/:item', controller.findFood);
 //delete food *
 router.delete('/foods/:id', controller.deleteFood);
-
+//add recipe
+router.post('/recipes', controller.addRecipe);
+//get all recipes
+router.get('/recipes', controller.getAllRecipes);
+//delete recipe
+router.delete('/recipes/:id', controller.deleteRecipe);
 
 module.exports = router;

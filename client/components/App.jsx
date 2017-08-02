@@ -13,7 +13,6 @@ class App extends Component {
       produces:[],
       food:'',
       date: '',
-      // browse: false,
       foodlist: true,
       recipes: []
     }
@@ -22,7 +21,6 @@ class App extends Component {
   this.handleGetAll=this.handleGetAll.bind(this);
   this.handleOnDelete=this.handleOnDelete.bind(this);
   this.handleOnClick=this.handleOnClick.bind(this);
-  // this.handleOnBrowse=this.handleOnBrowse.bind(this);
   }
   componentDidMount(){
     axios.get('http://localhost:3030/api/foods')
@@ -86,8 +84,11 @@ class App extends Component {
   handleOnClick(search){
     axios.get(`https://api.edamam.com/search?q=${search}&app_id=${config.id}&app_key=${config.key}`)
       .then(data => {
+        let temp = data.data.hits.map(recipedata => {
+          return recipedata.recipe
+        })
         this.setState({
-          recipes: data.data.hits
+          recipes: temp
         })
       })
   }
@@ -102,11 +103,7 @@ class App extends Component {
               Expiration Date: <input className="dateinput" type="text" name="date" placeholder="Enter expir. date" value={this.state.date} onChange={this.handleOnChange} />
             </span>
             <button className="addbutton" onClick={this.handleOnAdd}>Add Food</button>
-            {/* <button onClick={this.handleGetAll}>Filter By Expiration Date</button> */}
-            {/* <button onClick={this.handleOnBrowse}>Find in Fridge</button> */}
-            {/* {this.state.browse ? <Browse /> : null} */}
-            {/* {this.state.foodlist ?  <FoodList produces={this.state.produces} handleOnDelete={this.handleOnDelete}/> : null} */}
-            <FoodList handleGetAll={this.handleGetAll} produces={this.state.produces} handleOnDelete={this.handleOnDelete} handleOnClick={this.handleOnClick}/>
+          <FoodList handleGetAll={this.handleGetAll} produces={this.state.produces} handleOnDelete={this.handleOnDelete} handleOnClick={this.handleOnClick}/>
          </div>
         <div className="right"> 
           <Recipes recipes={this.state.recipes}/>

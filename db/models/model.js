@@ -12,6 +12,25 @@ const Food = db.define('foods', {
   timestamps: false
 })
 
-Food.sync();
+const Recipe = db.define('recipes', {
+  url: {
+    type: Sequelize.STRING
+  },
+  label: {
+    type: Sequelize.STRING
+  },
+  calories: {
+    type: Sequelize.INTEGER
+  }
+}, {
+  timestamps: false
+})
 
-module.exports = Food;
+
+Food.sync();
+Recipe.sync();
+
+module.exports = {
+  Food, 
+  Recipe
+}
