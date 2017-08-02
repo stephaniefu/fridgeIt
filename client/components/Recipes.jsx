@@ -15,13 +15,6 @@ class Recipes extends Component {
     this.handleOnSave=this.handleOnSave.bind(this);
   }
 
-  // handleShowSaved(){
-  //   this.setState({
-  //     showRecipes: false,
-  //     showSaved: true
-  //   })
-  // }
-
   handleShowSaved(){
     axios.get('http://localhost:3030/api/recipes')
       .then(data => {
